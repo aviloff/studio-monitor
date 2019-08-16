@@ -1,4 +1,4 @@
-#N canvas 578 139 654 433 10;
+#N canvas 615 122 654 433 10;
 #X obj 51 137 adc~ 1 2;
 #X obj 299 475 dac~ 1 2;
 #N canvas 158 223 450 300 monovolume 0;
@@ -146,7 +146,7 @@
 #X msg 212 45 1;
 #X msg 288 47 0;
 #X obj 571 241 r mutes;
-#X obj 288 90 s mutem;
+#X obj 289 84 s mutem;
 #X obj 451 175 r mutem;
 #X msg 322 47 1;
 #X msg 408 47 1;
