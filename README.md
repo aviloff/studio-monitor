@@ -1,4 +1,4 @@
-# real-monitor
+# studio-monitor
  Realtime studio sound check
 
  Pure Data patch for checking mid/side/stereo in realtime - to be used with Soundflower or similar program
