@@ -1,6 +1,6 @@
 #N canvas 625 287 943 492 10;
 #X obj 58 -97 vsl 20 200 0 1000 0 0 empty empty empty 0 -9 0 10 -261234
--1 -1 16060 1;
+-1 -1 4666 1;
 #X obj 278 -129 vradio 30 1 0 5 empty empty empty 0 -8 0 10 -204786
 -1 -1 0;
 #X msg 124 -152 0;
@@ -300,7 +300,7 @@
 #X connect 3 0 5 0;
 #X connect 3 1 6 0;
 #X connect 7 0 1 0;
-#X restore 528 -179 pd osc-control;
+#X restore 523 -179 pd osc-control;
 #X connect 0 0 7 0;
 #X connect 1 0 5 0;
 #X connect 2 0 6 0;
