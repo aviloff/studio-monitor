@@ -1,22 +1,21 @@
-#N canvas 345 23 613 400 10;
-#X obj 57 -101 vsl 20 200 0 1000 0 0 empty empty empty 0 -9 0 10 -261234
--1 -1 19900 1;
+#N canvas 625 287 943 492 10;
+#X obj 58 -97 vsl 20 200 0 1000 0 0 empty empty empty 0 -9 0 10 -261234
+-1 -1 16133 1;
 #X obj 278 -129 vradio 30 1 0 5 empty empty empty 0 -8 0 10 -204786
 -1 -1 0;
 #X msg 124 -152 0;
-#N canvas 95 153 758 436 midicontrollers 0;
-#X obj 87 86 / 127;
-#X obj 89 104 * 1000;
-#X obj 201 109 s midivol;
+#N canvas 326 385 758 436 midicontrollers 0;
+#X obj 219 98 / 127;
+#X obj 221 116 * 1000;
 #X obj 219 196 s midicntrls;
 #X msg 171 163 0;
-#X obj 114 143 loadbang;
+#X obj 141 134 loadbang;
 #X connect 0 0 1 0;
+#X connect 3 0 2 0;
 #X connect 4 0 3 0;
-#X connect 5 0 4 0;
-#X restore 272 -180 pd midicontrollers;
+#X restore 278 -180 pd midicontrollers;
 #X msg 56 -152 100;
-#N canvas 295 207 858 495 midsidebox 1;
+#N canvas 295 207 858 495 midsidebox 0;
 #X msg 137 172 0;
 #X obj 104 199 s mutemain;
 #X msg 104 173 1;
@@ -103,7 +102,7 @@
 #X obj 188 304 r~ r-r;
 #X msg 467 173 1;
 #X msg 433 173 0;
-#N canvas 523 369 1440 851 leftright 1;
+#N canvas 0 23 1440 851 leftright 0;
 #X obj 218 100 *~;
 #X obj 121 101 *~;
 #X obj 195 55 r~ r;
@@ -178,7 +177,7 @@
 #X connect 3 0 4 0;
 #X connect 4 0 1 0;
 #X connect 5 0 1 0;
-#X restore 56 -132 pd inputvolumes;
+#X restore 56 -129 pd inputvolumes;
 #N canvas 0 23 450 300 volumecontroller 0;
 #X obj 240 125 inlet;
 #X obj 168 148 adc~ 1 2;
@@ -252,6 +251,39 @@
 #X text 227 -1 right;
 #X msg 91 -152 50;
 #X obj 278 -152 r midicntrls;
+#N canvas 482 408 664 447 osc-kontrolleur 0;
+#X obj 87 92 pipelist;
+#X obj 87 66 unpackOSC;
+#X obj 87 40 udpreceive 44444;
+#X obj 88 117 routeOSC /touches;
+#X obj 86 185 list split 1;
+#X obj 85 243 expr if ($f1 <= 260 \, 0 \, if ($f1 > 260 && $f1 <= 520
+\, 1 \, if ($f1 > 520 && $f1 <= 780 \, 2 \, if ($f1 > 780 && $f1 <=
+1040 \, 3 \, 4))));
+#X obj 88 162 list split 1;
+#X obj 88 140 list split 1;
+#X obj 493 201 / 702;
+#X obj 84 311 s midicntrls;
+#X obj 493 268 s midivol;
+#X obj 493 181 - 10;
+#X obj 493 221 * 1050;
+#X obj 493 244 expr if ($f1 < 0 \, 0 \, if ($f1 > 1000 \, 1000 \, $f1))
+;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 2 0 1 0;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 9 0;
+#X connect 6 0 11 0;
+#X connect 6 1 4 0;
+#X connect 7 1 6 0;
+#X connect 8 0 12 0;
+#X connect 11 0 8 0;
+#X connect 12 0 13 0;
+#X connect 13 0 10 0;
+#X restore 402 -180 pd osc-kontrolleur;
 #X connect 0 0 7 0;
 #X connect 1 0 5 0;
 #X connect 2 0 6 0;
