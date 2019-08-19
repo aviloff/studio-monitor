@@ -1,6 +1,6 @@
 #N canvas 625 287 943 492 10;
 #X obj 58 -97 vsl 20 200 0 1000 0 0 empty empty empty 0 -9 0 10 -261234
--1 -1 16133 1;
+-1 -1 16060 1;
 #X obj 278 -129 vradio 30 1 0 5 empty empty empty 0 -8 0 10 -204786
 -1 -1 0;
 #X msg 124 -152 0;
@@ -284,6 +284,23 @@
 #X connect 12 0 13 0;
 #X connect 13 0 10 0;
 #X restore 402 -180 pd osc-kontrolleur;
+#N canvas 277 22 450 300 osc-control 0;
+#X obj 87 92 pipelist;
+#X obj 87 66 unpackOSC;
+#X obj 88 117 routeOSC /oscControl;
+#X obj 97 150 routeOSC /volume /channels;
+#X obj 185 235 print;
+#X obj 28 209 s midivol;
+#X obj 114 209 s midicntrls;
+#X obj 87 40 udpreceive 10001;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 3 1 6 0;
+#X connect 7 0 1 0;
+#X restore 528 -179 pd osc-control;
 #X connect 0 0 7 0;
 #X connect 1 0 5 0;
 #X connect 2 0 6 0;

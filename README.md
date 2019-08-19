@@ -13,11 +13,15 @@ monitor.pd also implements 2 spectrum analyzers
 ---
 
 Commits welcome:
-- OSC switches and volume controls
+- OSC switches and volume control modifications and improvements
 - sophisticated fft spectrums with various settings to check out what's playing
 - filters to check mastering on "various sound systems"
 - MIDI controllers mappings
 - patch performance optimisation
 - more ideas welcome!
+
+---
+
+Thanks to [Adam Katz's OSC Controller](https://play.google.com/store/apps/details?id=com.ffsmultimedia.osccontroller&hl=en_GB), [vvvv's Kontrolleur](https://github.com/vvvv/Kontrolleur)! Looking forward to more releases!
 
 ---
