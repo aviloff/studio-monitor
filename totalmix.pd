@@ -1,0 +1,47 @@
+#N canvas 841 185 882 571 10;
+#X obj 88 108 unpackOSC;
+#X obj 365 215 packOSC;
+#X obj 535 342 udpsend;
+#X obj 365 47 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 88 133 routeOSC /1;
+#X obj 88 84 udpreceive 8000;
+#X msg 365 188 send /1/mastervolume \$1;
+#X msg 668 301 disconnect;
+#X obj 138 188 routeOSC /mastervolume;
+#X obj 138 219 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 7 188 routeOSC /mainMono;
+#X obj 7 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 598 198 packOSC;
+#X obj 598 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 554 188 print;
+#X msg 668 274 connect localhost 9000;
+#X obj 668 247 loadbang;
+#X obj 40 125 print;
+#X text 390 101 works!;
+#X text 157 214 works!;
+#X text 503 26 send data;
+#X text 90 28 receive data;
+#X msg 598 171 send /1/mainMono \$1;
+#X text 622 143 works not! no reaction in TotalMix FX;
+#X text 27 214 works!;
+#X connect 0 0 4 0;
+#X connect 0 0 17 0;
+#X connect 1 0 2 0;
+#X connect 3 0 6 0;
+#X connect 4 0 8 0;
+#X connect 4 0 10 0;
+#X connect 5 0 0 0;
+#X connect 6 0 1 0;
+#X connect 7 0 2 0;
+#X connect 8 0 9 0;
+#X connect 10 0 11 0;
+#X connect 12 0 2 0;
+#X connect 13 0 22 0;
+#X connect 15 0 2 0;
+#X connect 16 0 15 0;
+#X connect 22 0 12 0;
+#X connect 22 0 14 0;
