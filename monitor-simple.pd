@@ -1,10 +1,10 @@
-#N canvas 384 262 943 492 10;
+#N canvas 87 247 943 492 10;
 #X obj 57 -95 vsl 20 200 0 1000 0 0 empty empty empty 0 -9 0 10 -261234
--1 -1 19900 1;
+-1 -1 15920 1;
 #X obj 278 -129 vradio 30 1 0 5 empty empty empty 0 -8 0 10 -204786
 -1 -1 0;
 #X msg 124 -152 0;
-#N canvas 326 385 758 436 midicontrollers 1;
+#N canvas 326 385 758 436 midicontrollers 0;
 #X obj 219 98 / 127;
 #X obj 221 116 * 1000;
 #X obj 219 196 s midicntrls;
@@ -204,7 +204,7 @@
 #X connect 12 0 13 0;
 #X connect 13 0 10 0;
 #X restore 402 -179 pd osc-kontrolleur;
-#N canvas 277 23 450 300 osc-control 1;
+#N canvas 174 98 731 360 osc-control 0;
 #X obj 87 92 pipelist;
 #X obj 87 66 unpackOSC;
 #X obj 88 117 routeOSC /oscControl;
@@ -241,9 +241,9 @@
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
 #X restore 56 -129 pd volume-slider;
-#N canvas 29 383 450 300 inputvolumes 0;
+#N canvas 570 614 450 300 inputvolumes 0;
 #X obj 244 36 inlet;
-#X obj 155 222 s~ r;
+#X obj 158 217 s~ r;
 #X obj 204 218 s~ l;
 #N canvas 158 223 450 300 monovolume 0;
 #X obj 81 198 *~;
@@ -281,8 +281,8 @@
 #X obj 28 77 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 28 97 metro 300;
-#X obj 31 127 snapshot~;
-#X obj 162 67 adc~ 1 2 3 4;
+#X obj 30 122 snapshot~;
+#X obj 155 34 adc~ 1 2 3 4;
 #X obj 102 120 r mute;
 #X obj 188 140 *~;
 #X obj 152 141 *~;
@@ -290,9 +290,12 @@
 #X obj 205 192 *~;
 #X obj 250 173 / 1000;
 #X obj 256 243 outlet;
+#X obj 351 131 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X floatatom 30 164 5 0 0 0 - - -;
 #X connect 0 0 13 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
+#X connect 6 0 16 0;
 #X connect 7 0 10 0;
 #X connect 7 1 9 0;
 #X connect 8 0 9 1;
