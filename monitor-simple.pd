@@ -1,18 +1,160 @@
-#N canvas 87 247 943 492 10;
+#N canvas 82 422 943 492 10;
 #X obj 57 -95 vsl 20 200 0 1000 0 0 empty empty empty 0 -9 0 10 -261234
 -1 -1 15920 1;
 #X obj 278 -129 vradio 30 1 0 5 empty empty empty 0 -8 0 10 -204786
 -1 -1 0;
 #X msg 124 -152 0;
-#N canvas 326 385 758 436 midicontrollers 0;
-#X obj 219 98 / 127;
-#X obj 221 116 * 1000;
-#X obj 219 196 s midicntrls;
-#X msg 171 163 0;
-#X obj 141 134 loadbang;
+#N canvas 88 100 1091 644 midicontrollers 1;
+#X obj 79 82 / 127;
+#X obj 81 100 * 1000;
+#X obj 1 187 s midicntrls;
+#X msg 31 147 0;
+#X obj 1 118 loadbang;
+#X obj 428 69 spigot;
+#X floatatom 694 -18 5 0 0 0 - - -;
+#X obj 439 35 pipe 1;
+#X obj 579 -70 notein;
+#X floatatom 653 -59 5 0 0 0 - - -;
+#X floatatom 447 -38 5 0 0 0 - - -;
+#X obj 1013 231 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 1033 232 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 963 231 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 983 232 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 913 231 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 933 232 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 863 231 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 883 232 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 807 232 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 827 233 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 752 232 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 772 233 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 698 230 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 718 231 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 648 230 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 668 231 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 598 230 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 618 231 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 962 256 35 B3;
+#X text 912 256 34 Bb3;
+#X text 862 256 33 A3;
+#X text 806 257 32 Ab3;
+#X text 751 257 31 G3;
+#X text 647 255 29 F3;
+#X text 597 255 28 E3;
+#X text 697 255 30 F#;
+#X obj 541 229 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 561 230 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 488 230 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 508 231 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 431 229 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 451 230 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 391 230 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 540 254 27 Eb3;
+#X text 481 251 26 D3;
+#X text 431 253 25 C#3;
+#X text 368 252 24 C3;
+#X text 1012 256 36 C4;
+#X obj 371 229 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 366 112 select 12 13 14 15 16 17 18 19 20 21 22 23 24, f 99
+;
+#X msg 198 246 /cc79 \$1;
+#X msg 429 420 /nt_ch1 \$1;
+#X msg 115 246 /cc74 \$1;
+#X obj 427 394 notein;
+#X msg 100 381 /_pitchbend;
+#X obj 362 387 pgmin;
+#X floatatom 363 414 5 0 0 0 - - -;
+#X floatatom 111 354 5 0 0 0 - - -;
+#X obj 215 314 ctlin 1 1;
+#X obj 280 220 ctlin 7 1;
+#X obj 114 216 ctlin 74 1;
+#X obj 197 219 ctlin 79 1;
+#X obj 108 327 bendin;
+#X msg 106 306 8192;
+#X floatatom 212 359 5 0 0 0 - - -;
+#X obj 212 377 f;
+#X floatatom 287 435 5 0 0 0 - - -;
+#X obj 212 340 / 127;
+#X obj 280 299 s midiVolume;
+#X floatatom 280 262 5 0 0 0 - - -;
+#X obj 280 280 f;
+#X obj 280 243 / 127;
 #X connect 0 0 1 0;
 #X connect 3 0 2 0;
 #X connect 4 0 3 0;
+#X connect 5 0 50 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 0;
+#X connect 8 0 10 0;
+#X connect 8 1 6 0;
+#X connect 8 1 5 1;
+#X connect 8 2 9 0;
+#X connect 12 0 11 0;
+#X connect 14 0 13 0;
+#X connect 16 0 15 0;
+#X connect 18 0 17 0;
+#X connect 20 0 19 0;
+#X connect 22 0 21 0;
+#X connect 24 0 23 0;
+#X connect 26 0 25 0;
+#X connect 28 0 27 0;
+#X connect 38 0 37 0;
+#X connect 40 0 39 0;
+#X connect 42 0 41 0;
+#X connect 43 0 49 0;
+#X connect 50 0 49 0;
+#X connect 50 1 41 0;
+#X connect 50 2 39 0;
+#X connect 50 3 37 0;
+#X connect 50 4 27 0;
+#X connect 50 5 25 0;
+#X connect 50 6 23 0;
+#X connect 50 7 21 0;
+#X connect 50 8 19 0;
+#X connect 50 9 17 0;
+#X connect 50 10 15 0;
+#X connect 50 11 13 0;
+#X connect 50 12 11 0;
+#X connect 56 0 57 0;
+#X connect 58 0 55 0;
+#X connect 59 0 68 0;
+#X connect 60 0 72 0;
+#X connect 61 0 53 0;
+#X connect 62 0 51 0;
+#X connect 63 0 55 0;
+#X connect 63 0 58 0;
+#X connect 65 0 66 0;
+#X connect 66 0 67 0;
+#X connect 68 0 65 0;
+#X connect 70 0 71 0;
+#X connect 71 0 69 0;
+#X connect 72 0 70 0;
 #X restore 278 -180 pd midicontrollers;
 #N canvas 562 36 858 495 midsidebox 0;
 #X msg 137 172 0;
@@ -241,7 +383,7 @@
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
 #X restore 56 -129 pd volume-slider;
-#N canvas 570 614 450 300 inputvolumes 0;
+#N canvas 433 563 450 300 inputvolumes 0;
 #X obj 244 36 inlet;
 #X obj 158 217 s~ r;
 #X obj 204 218 s~ l;
@@ -311,6 +453,58 @@
 #X msg 91 -152 0.5;
 #X msg 56 -152 1;
 #X obj 8 -91 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#N canvas 20 187 450 300 totalmix 0;
+#N canvas 392 549 747 380 totalMixUdpSender 1;
+#X obj 346 239 udpsend;
+#X obj 166 74 loadbang;
+#X msg 77 215 \; pd dsp \$1;
+#X obj 82 181 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 198 103 metro 1000;
+#X obj 229 129 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 178 253 != 1;
+#X obj 397 142 packOSC;
+#X msg 198 219 disconnect;
+#X floatatom 174 277 5 0 0 0 - - -;
+#X obj 171 102 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 257 24 sendtyped /test i 1;
+#X msg 334 70 /test 1;
+#X msg 228 188 connect 127.0.0.1 7001;
+#X obj 400 -2 inlet;
+#X floatatom 457 47 5 0 0 0 - - -;
+#X obj 400 18 print;
+#X connect 0 0 6 0;
+#X connect 1 0 4 0;
+#X connect 1 0 3 0;
+#X connect 4 0 5 0;
+#X connect 4 0 13 0;
+#X connect 6 0 9 0;
+#X connect 6 0 10 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
+#X connect 10 0 4 0;
+#X connect 11 0 7 0;
+#X connect 12 0 7 0;
+#X connect 13 0 0 0;
+#X connect 14 0 7 0;
+#X connect 14 0 15 0;
+#X connect 14 0 16 0;
+#X restore 151 211 pd totalMixUdpSender;
+#X obj 78 109 r midiVolume;
+#X msg 45 207;
+#X floatatom 88 133 5 0 0 0 - - -;
+#X msg 80 158 sendtyped /1/mastervolume f \$1;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 4 0 0 0;
+#X restore 657 -177 pd totalmix;
+#N canvas 796 63 450 300 reaper 1;
+#X obj 60 33 r midiVolme;
+#X msg 60 53;
+#X connect 0 0 1 0;
+#X restore 804 -179 pd reaper;
 #X connect 0 0 15 0;
 #X connect 1 0 4 0;
 #X connect 2 0 14 0;
