@@ -6,8 +6,13 @@
 % Node styles
 \tikzstyle{audioOutADAT}=[fill=white, draw=orange, shape=rectangle]
 \tikzstyle{audioOutADAT}=[fill=white, draw=orange, shape=rectangle, tikzit shape=rectangle]
+\tikzstyle{soundCard}=[fill={rgb,255: red,255; green,210; blue,164}, draw=black, shape=rectangle]
+\tikzstyle{Out}=[fill={rgb,255: red,255; green,167; blue,169}, draw=black, shape=rectangle]
+\tikzstyle{In}=[fill={rgb,255: red,205; green,255; blue,193}, draw=black, shape=rectangle]
 
 % Edge styles
 \tikzstyle{arrowSound}=[->]
-\tikzstyle{adat}=[->, draw={rgb,255: red,107; green,117; blue,255}]
+\tikzstyle{blue}=[->, draw={rgb,255: red,107; green,117; blue,255}]
 \tikzstyle{adat}=[->, dashed]
+\tikzstyle{cover}=[-, draw={rgb,255: red,191; green,128; blue,64}]
+\tikzstyle{inner connection}=[->, draw={rgb,255: red,255; green,191; blue,191}]
