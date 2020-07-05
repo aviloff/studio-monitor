@@ -1,5 +1,5 @@
 #N canvas 684 283 505 87 10;
-#N canvas 143 378 1084 427 midicontrollers 0;
+#N canvas 143 378 1084 427 midicontrollers 1;
 #X obj 44 176 s midicntrls;
 #X msg 31 147 0;
 #X obj 1 118 loadbang;
@@ -47,7 +47,7 @@
 #X text 619 243 29 F3;
 #X text 571 243 28 E3;
 #X text 670 148 30 F#;
-#X obj 520 164 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 0
+#X obj 520 164 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 1
 1;
 #X obj 540 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -55,7 +55,7 @@
 1;
 #X obj 491 262 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 422 164 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 0
+#X obj 422 164 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 1
 1;
 #X obj 442 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -65,7 +65,7 @@
 #X text 470 243 26 D3;
 #X text 418 146 25 C#3;
 #X text 370 244 24 C3;
-#X obj 373 263 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 373 263 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 103 403 /_pitchbend;
 #X floatatom 114 376 5 0 0 0 - - -;
@@ -134,7 +134,7 @@
 #X text 1332 207 29 F3;
 #X text 1282 206 28 E3;
 #X text 1380 109 30 F#;
-#X obj 1234 83 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 0
+#X obj 1234 83 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 1
 1;
 #X obj 1254 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -337,8 +337,8 @@
 #X obj 585 588 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 466 543 line 5;
-#X obj 462 562 routeOSC /gridButton17 /gridButton18 /gridButton19 /gridButton20
-, f 83;
+#X obj 461 562 routeOSC /gridButton17 /gridButton18 /gridButton19 /gridButton20
+, f 67;
 #X obj 585 611 s normaliseLoudness;
 #X text 463 322 line 3;
 #X text 463 212 line 2;
@@ -355,6 +355,17 @@
 #X msg 791 395 4;
 #X obj 791 418 s soundChannel;
 #X obj 791 373 select 1 0;
+#X obj 463 392 s soundLevel;
+#X msg 463 369 3;
+#X obj 556 700 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 462 655 line 5;
+#X obj 770 791 s normaliseLoudness;
+#X obj 457 674 routeOSC /gridButton21 /gridButton22 /gridButton23 /gridButton24
+, f 67;
+#X obj 577 701 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 0
+1;
+#X obj 655 761 s referenceTrack;
 #X connect 0 0 11 0;
 #X connect 1 0 0 0;
 #X connect 1 1 0 1;
@@ -367,6 +378,7 @@
 #X connect 13 1 12 0;
 #X connect 13 2 14 0;
 #X connect 13 3 27 0;
+#X connect 15 0 37 0;
 #X connect 15 1 16 0;
 #X connect 15 3 30 0;
 #X connect 15 4 17 0;
@@ -375,6 +387,7 @@
 #X connect 19 0 18 0;
 #X connect 21 0 24 0;
 #X connect 23 1 21 0;
+#X connect 23 4 41 0;
 #X connect 27 3 29 0;
 #X connect 27 4 15 0;
 #X connect 29 0 28 0;
@@ -384,6 +397,10 @@
 #X connect 33 0 34 0;
 #X connect 35 0 33 0;
 #X connect 35 1 32 0;
+#X connect 37 0 36 0;
+#X connect 38 0 42 0;
+#X connect 41 1 38 0;
+#X connect 42 0 43 0;
 #X restore 120 -156 pd osc-control;
 #N canvas 560 446 450 300 pd_interface 0;
 #X obj 84 73 vsl 20 200 0 1000 0 0 empty empty empty 0 -9 0 10 -261234
@@ -636,7 +653,7 @@
 #X connect 13 0 11 0;
 #X connect 14 0 11 0;
 #X restore 15 -175 pd pd_interface;
-#N canvas 167 391 1040 544 totalmix-sender 1;
+#N canvas -552 329 1040 544 totalmix-sender 1;
 #N canvas 445 443 747 380 totalMixUdpSender 0;
 #X obj 346 239 udpsend;
 #X obj 166 74 loadbang;
@@ -707,23 +724,24 @@
 #X msg 680 41 1 1 1 1 1 1;
 #X obj 29 61 r mainVolume;
 #X obj 155 32 r soundLevel;
-#X msg 176 89 0.5;
 #X msg 29 178 sendtyped /1/volume3 f \$1;
 #X obj 29 199 s toRME;
 #X obj 295 163 s toRME;
 #X obj 458 164 s toRME;
 #X obj 330 216 s toRME;
 #X obj 370 259 s toRME;
-#X obj 155 62 select 0 1 2;
 #X msg 149 89 0;
 #X msg 207 88 0.35;
+#X obj 155 62 select 0 1 2 3;
+#X msg 249 89 0.632;
+#X msg 176 89 0.51;
 #X connect 2 0 1 0;
 #X connect 2 0 4 0;
-#X connect 3 0 36 0;
-#X connect 4 0 34 0;
+#X connect 3 0 35 0;
+#X connect 4 0 33 0;
 #X connect 5 0 8 0;
-#X connect 7 0 37 0;
-#X connect 8 0 35 0;
+#X connect 7 0 36 0;
+#X connect 8 0 34 0;
 #X connect 10 0 14 0;
 #X connect 10 1 16 0;
 #X connect 10 2 17 0;
@@ -754,15 +772,17 @@
 #X connect 27 6 24 0;
 #X connect 28 0 10 0;
 #X connect 29 0 1 0;
-#X connect 29 0 32 0;
-#X connect 30 0 38 0;
+#X connect 29 0 31 0;
+#X connect 30 0 39 0;
 #X connect 31 0 32 0;
-#X connect 32 0 33 0;
-#X connect 38 0 39 0;
-#X connect 38 1 31 0;
-#X connect 38 2 40 0;
-#X connect 39 0 32 0;
-#X connect 40 0 32 0;
+#X connect 37 0 31 0;
+#X connect 38 0 31 0;
+#X connect 39 0 37 0;
+#X connect 39 1 41 0;
+#X connect 39 2 38 0;
+#X connect 39 3 40 0;
+#X connect 40 0 31 0;
+#X connect 41 0 31 0;
 #X restore 246 -174 pd totalmix-sender;
 #N canvas -1284 -4 1280 980 REAPER-sender 1;
 #X obj 305 244 s toREAPER;
@@ -899,7 +919,7 @@
 #X msg 809 791 sendtyped /pauseLufsMeters f \$1;
 #X obj 809 766 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 833 766 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 833 766 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 617 560 r normaliseLoudness;
 #X obj 809 812 s toREAPERext;
@@ -908,7 +928,7 @@
 #X msg 1363 662 sendtyped /adjustLoudness f 0.5;
 #X obj 615 585 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 639 585 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 639 585 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 671 585 select 0 1;
 #X msg 699 674 sendtyped /adjustLoudness f 0.5;
