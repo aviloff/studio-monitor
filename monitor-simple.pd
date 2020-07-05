@@ -47,7 +47,7 @@
 #X text 619 243 29 F3;
 #X text 571 243 28 E3;
 #X text 670 148 30 F#;
-#X obj 520 164 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 1
+#X obj 520 164 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 0
 1;
 #X obj 540 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -55,7 +55,7 @@
 1;
 #X obj 491 262 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 422 164 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 1
+#X obj 422 164 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 0
 1;
 #X obj 442 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -65,7 +65,7 @@
 #X text 470 243 26 D3;
 #X text 418 146 25 C#3;
 #X text 370 244 24 C3;
-#X obj 373 263 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 373 263 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 103 403 /_pitchbend;
 #X floatatom 114 376 5 0 0 0 - - -;
@@ -114,7 +114,7 @@
 0 1;
 #X obj 1452 181 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1381 83 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 1
+#X obj 1381 83 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 0
 1;
 #X obj 1401 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -134,7 +134,7 @@
 #X text 1332 207 29 F3;
 #X text 1282 206 28 E3;
 #X text 1380 109 30 F#;
-#X obj 1234 83 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 1
+#X obj 1234 83 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 0
 1;
 #X obj 1254 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -174,7 +174,7 @@
 #X msg 785 208 4;
 #X obj 1136 138 s referenceTrack;
 #X obj 1254 137 s resetMeters;
-#X obj 1401 133 s resetAdjustLoudness;
+#X obj 1401 133 s normaliseLoudness;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
 #X connect 3 0 106 0;
@@ -307,10 +307,10 @@
 #X connect 12 0 13 0;
 #X connect 13 0 10 0;
 #X restore 120 -175 pd osc-kontrolleur;
-#N canvas 243 415 894 390 osc-control 0;
+#N canvas -1261 144 1285 471 osc-control 1;
 #X obj 79 73 pipelist;
 #X obj 79 45 unpackOSC;
-#X obj 22 168 print;
+#X obj 21 153 print;
 #X obj 199 61 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 242 41 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -325,6 +325,36 @@
 #X obj 193 152 s soundChannel;
 #X obj 83 125 routeOSC /selectSpeaker /soundChannel /soundLevel;
 #X obj 293 152 s soundLevel;
+#X obj 463 345 routeOSC /gridButton9 /gridButton10 /gridButton11 /gridButton12
+, f 64;
+#X obj 558 374 s pauseLufsMeters;
+#X obj 463 455 routeOSC /gridButton13 /gridButton14 /gridButton15 /gridButton16
+, f 66;
+#X obj 561 502 s resetMeters;
+#X obj 561 479 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 468 435 line 4;
+#X obj 585 588 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 466 543 line 5;
+#X obj 462 562 routeOSC /gridButton17 /gridButton18 /gridButton19 /gridButton20
+, f 83;
+#X obj 585 611 s normaliseLoudness;
+#X text 463 322 line 3;
+#X text 463 212 line 2;
+#X obj 463 235 routeOSC /gridButton5 /gridButton6 /gridButton7 /gridButton8
+, f 64;
+#X obj 748 285 s toggleBinaural;
+#X obj 748 261 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 748 372 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 770 372 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 822 395 5;
+#X msg 791 395 4;
+#X obj 791 418 s soundChannel;
+#X obj 791 373 select 1 0;
 #X connect 0 0 11 0;
 #X connect 1 0 0 0;
 #X connect 1 1 0 1;
@@ -332,11 +362,28 @@
 #X connect 7 0 6 0;
 #X connect 8 0 6 0;
 #X connect 9 0 8 0;
-#X connect 11 0 2 0;
 #X connect 11 0 13 0;
 #X connect 13 0 10 0;
 #X connect 13 1 12 0;
 #X connect 13 2 14 0;
+#X connect 13 3 27 0;
+#X connect 15 1 16 0;
+#X connect 15 3 30 0;
+#X connect 15 4 17 0;
+#X connect 17 1 19 0;
+#X connect 17 4 23 0;
+#X connect 19 0 18 0;
+#X connect 21 0 24 0;
+#X connect 23 1 21 0;
+#X connect 27 3 29 0;
+#X connect 27 4 15 0;
+#X connect 29 0 28 0;
+#X connect 30 0 31 0;
+#X connect 31 0 35 0;
+#X connect 32 0 34 0;
+#X connect 33 0 34 0;
+#X connect 35 0 33 0;
+#X connect 35 1 32 0;
 #X restore 120 -156 pd osc-control;
 #N canvas 560 446 450 300 pd_interface 0;
 #X obj 84 73 vsl 20 200 0 1000 0 0 empty empty empty 0 -9 0 10 -261234
@@ -589,7 +636,7 @@
 #X connect 13 0 11 0;
 #X connect 14 0 11 0;
 #X restore 15 -175 pd pd_interface;
-#N canvas 167 391 1040 544 totalmix-sender 0;
+#N canvas 167 391 1040 544 totalmix-sender 1;
 #N canvas 445 443 747 380 totalMixUdpSender 0;
 #X obj 346 239 udpsend;
 #X obj 166 74 loadbang;
@@ -629,14 +676,13 @@
 #X connect 17 0 16 0;
 #X connect 17 1 16 1;
 #X connect 18 0 17 0;
-#X restore 138 237 pd totalMixUdpSender;
+#X restore 37 342 pd totalMixUdpSender;
 #X floatatom 229 129 5 0 0 0 - - -;
 #X obj 294 115 r midiPhones1Volume;
-#X obj 148 206 s toRME;
 #X msg 330 196 sendtyped /1/mastervolume f \$1;
 #X msg 295 143 sendtyped /1/volume4 f \$1;
 #X obj 459 96 r midiSpeakers3Volume;
-#X msg 588 341 sendtyped /1/track- f \$1;
+#X msg 327 337 sendtyped /1/track- f \$1;
 #X msg 370 239 sendtyped /1/track+ f 3;
 #X msg 458 144 sendtyped /1/volume7 f \$1;
 #X obj 601 305 s toRME;
@@ -661,55 +707,62 @@
 #X msg 680 41 1 1 1 1 1 1;
 #X obj 29 61 r mainVolume;
 #X obj 155 32 r soundLevel;
-#X obj 155 62 select 1 2;
-#X msg 149 90 0.5;
-#X msg 193 91 0.1;
+#X msg 176 89 0.5;
 #X msg 29 178 sendtyped /1/volume3 f \$1;
+#X obj 29 199 s toRME;
+#X obj 295 163 s toRME;
+#X obj 458 164 s toRME;
+#X obj 330 216 s toRME;
+#X obj 370 259 s toRME;
+#X obj 155 62 select 0 1 2;
+#X msg 149 89 0;
+#X msg 207 88 0.35;
 #X connect 2 0 1 0;
-#X connect 2 0 5 0;
-#X connect 4 0 3 0;
-#X connect 5 0 3 0;
-#X connect 6 0 9 0;
-#X connect 7 0 3 0;
-#X connect 8 0 3 0;
-#X connect 9 0 3 0;
-#X connect 11 0 15 0;
-#X connect 11 1 17 0;
-#X connect 11 2 18 0;
-#X connect 11 3 19 0;
-#X connect 11 4 20 0;
-#X connect 11 5 21 0;
-#X connect 12 0 11 0;
-#X connect 13 0 11 0;
-#X connect 14 0 10 0;
-#X connect 15 0 10 0;
-#X connect 16 0 10 0;
-#X connect 17 0 10 0;
-#X connect 18 0 26 0;
-#X connect 19 0 26 0;
-#X connect 20 0 26 0;
-#X connect 21 0 26 0;
-#X connect 22 0 11 0;
-#X connect 23 0 11 0;
-#X connect 24 0 11 0;
-#X connect 25 0 11 0;
+#X connect 2 0 4 0;
+#X connect 3 0 36 0;
+#X connect 4 0 34 0;
+#X connect 5 0 8 0;
+#X connect 7 0 37 0;
+#X connect 8 0 35 0;
+#X connect 10 0 14 0;
+#X connect 10 1 16 0;
+#X connect 10 2 17 0;
+#X connect 10 3 18 0;
+#X connect 10 4 19 0;
+#X connect 10 5 20 0;
+#X connect 11 0 10 0;
+#X connect 12 0 10 0;
+#X connect 13 0 9 0;
+#X connect 14 0 9 0;
+#X connect 15 0 9 0;
+#X connect 16 0 9 0;
+#X connect 17 0 25 0;
+#X connect 18 0 25 0;
+#X connect 19 0 25 0;
+#X connect 20 0 25 0;
+#X connect 21 0 10 0;
+#X connect 22 0 10 0;
+#X connect 23 0 10 0;
+#X connect 24 0 10 0;
+#X connect 26 0 27 0;
 #X connect 27 0 28 0;
-#X connect 28 0 29 0;
-#X connect 28 1 12 0;
-#X connect 28 2 13 0;
-#X connect 28 3 22 0;
-#X connect 28 4 23 0;
-#X connect 28 5 24 0;
-#X connect 28 6 25 0;
-#X connect 29 0 11 0;
-#X connect 30 0 1 0;
-#X connect 30 0 35 0;
+#X connect 27 1 11 0;
+#X connect 27 2 12 0;
+#X connect 27 3 21 0;
+#X connect 27 4 22 0;
+#X connect 27 5 23 0;
+#X connect 27 6 24 0;
+#X connect 28 0 10 0;
+#X connect 29 0 1 0;
+#X connect 29 0 32 0;
+#X connect 30 0 38 0;
 #X connect 31 0 32 0;
 #X connect 32 0 33 0;
-#X connect 32 1 34 0;
-#X connect 33 0 35 0;
-#X connect 34 0 35 0;
-#X connect 35 0 3 0;
+#X connect 38 0 39 0;
+#X connect 38 1 31 0;
+#X connect 38 2 40 0;
+#X connect 39 0 32 0;
+#X connect 40 0 32 0;
 #X restore 246 -174 pd totalmix-sender;
 #N canvas -1284 -4 1280 980 REAPER-sender 1;
 #X obj 305 244 s toREAPER;
@@ -768,7 +821,6 @@
 #X msg 1042 73 0 0 1 1;
 #X msg 1146 87 sendtyped /midiReferenceAB f \$1;
 #X obj 1146 111 s toREAPER;
-#X floatatom 1147 59 5 0 0 0 - - -;
 #X obj -39 23 r mainVolume;
 #X obj 697 44 select 1 2 3 4 5, f 65;
 #X obj 697 21 r soundChannel;
@@ -820,25 +872,22 @@
 -1 -1;
 #X msg 1476 453 sendtyped s/frames/str s 0;
 #X obj 957 348 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 12700 1;
+-1 -1 0 1;
 #X floatatom 958 492 5 0 0 0 - - -;
-#X obj 1040 695 r resetMeters;
-#X obj 961 654 s toREAPERext;
-#X msg 1339 597 sendtyped /adjustLoudness f 0.1;
-#X msg 1280 634 sendtyped /adjustLoudness f 0.51;
-#X obj 1280 613 delay 50;
-#X obj 1334 662 s toREAPERext;
-#X obj 1280 574 r adjustLoudness;
-#X obj 1040 830 s toREAPERext;
-#X msg 1084 804 sendtyped /resetMeters f 0.51;
-#X msg 1070 765 sendtyped /resetMeters f 0.1;
-#X msg 1040 720 sendtyped /adjustLoudness f 0.5;
-#X obj 1084 785 delay 100;
-#X obj 1070 742 delay 50;
-#X obj 1003 614 delay 50;
-#X msg 961 594 sendtyped /resetAdjust f 0.1;
-#X msg 1005 633 sendtyped /resetAdjust f 0.51;
-#X obj 961 573 r resetAdjustLoudness;
+#X obj 1002 558 r resetMeters;
+#X obj 615 703 s toREAPERext;
+#X msg 1276 596 sendtyped /adjustLoudness f 0.1;
+#X msg 1334 638 sendtyped /adjustLoudness f 0.51;
+#X obj 1334 617 delay 50;
+#X obj 1276 687 s toREAPERext;
+#X obj 1277 546 r adjustLoudness;
+#X obj 1004 702 s toREAPERext;
+#X msg 1048 676 sendtyped /resetMeters f 0.51;
+#X msg 1034 637 sendtyped /resetMeters f 0.1;
+#X msg 1004 592 sendtyped /adjustLoudness f 0.5;
+#X obj 658 636 delay 50;
+#X msg 616 616 sendtyped /resetAdjust f 0.1;
+#X msg 658 654 sendtyped /resetAdjust f 0.51;
 #X msg 1176 396 sendtyped t/play f 1;
 #X msg 1139 354 sendtyped t/stop f 1;
 #X msg 1158 376 sendtyped f/time f 0;
@@ -846,6 +895,28 @@
 -1 -1;
 #X obj 1108 462 s toREAPER;
 #X obj 1099 312 r resetMeters;
+#X obj 809 745 r pauseLufsMeters;
+#X msg 809 791 sendtyped /pauseLufsMeters f \$1;
+#X obj 809 766 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 833 766 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 617 560 r normaliseLoudness;
+#X obj 809 812 s toREAPERext;
+#X obj 1034 614 delay 80;
+#X obj 1048 657 delay 160;
+#X msg 1363 662 sendtyped /adjustLoudness f 0.5;
+#X obj 615 585 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 639 585 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 671 585 select 0 1;
+#X msg 699 674 sendtyped /adjustLoudness f 0.5;
+#X obj 1373 39 r toggleBinaural;
+#X obj 1373 64 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 1373 83 sendtyped /toggleBinaral f \$1;
+#X obj 1373 105 s toREAPER;
 #X connect 4 0 15 0;
 #X connect 5 0 2 0;
 #X connect 5 0 13 0;
@@ -861,57 +932,69 @@
 #X connect 14 0 11 0;
 #X connect 14 0 12 0;
 #X connect 15 0 14 0;
-#X connect 16 0 32 0;
-#X connect 16 1 29 0;
-#X connect 16 2 27 0;
-#X connect 16 3 28 0;
+#X connect 16 0 31 0;
+#X connect 16 1 28 0;
+#X connect 16 2 26 0;
+#X connect 16 3 27 0;
 #X connect 18 0 16 0;
 #X connect 19 0 16 0;
 #X connect 20 0 16 0;
 #X connect 21 0 22 0;
-#X connect 25 0 30 0;
-#X connect 25 1 31 0;
-#X connect 25 2 18 0;
-#X connect 25 3 19 0;
-#X connect 25 4 20 0;
-#X connect 26 0 25 0;
+#X connect 24 0 29 0;
+#X connect 24 1 30 0;
+#X connect 24 2 18 0;
+#X connect 24 3 19 0;
+#X connect 24 4 20 0;
+#X connect 25 0 24 0;
+#X connect 26 0 17 0;
 #X connect 27 0 17 0;
 #X connect 28 0 17 0;
-#X connect 29 0 17 0;
+#X connect 29 0 16 0;
 #X connect 30 0 16 0;
-#X connect 31 0 16 0;
-#X connect 32 0 17 0;
-#X connect 33 0 21 0;
-#X connect 33 0 23 0;
-#X connect 38 0 36 0;
-#X connect 40 0 36 0;
-#X connect 41 0 36 0;
-#X connect 42 0 40 0;
-#X connect 42 0 41 0;
-#X connect 42 0 38 0;
-#X connect 44 0 45 0;
-#X connect 46 0 56 0;
-#X connect 46 0 57 0;
-#X connect 46 0 58 0;
-#X connect 48 0 51 0;
-#X connect 49 0 51 0;
-#X connect 50 0 49 0;
-#X connect 52 0 48 0;
-#X connect 52 0 50 0;
-#X connect 54 0 53 0;
-#X connect 55 0 53 0;
-#X connect 56 0 53 0;
-#X connect 57 0 54 0;
-#X connect 58 0 55 0;
-#X connect 59 0 61 0;
-#X connect 60 0 47 0;
-#X connect 61 0 47 0;
+#X connect 31 0 17 0;
+#X connect 32 0 21 0;
+#X connect 37 0 35 0;
+#X connect 39 0 35 0;
+#X connect 40 0 35 0;
+#X connect 41 0 39 0;
+#X connect 41 0 40 0;
+#X connect 41 0 37 0;
+#X connect 43 0 44 0;
+#X connect 45 0 55 0;
+#X connect 45 0 71 0;
+#X connect 45 0 72 0;
+#X connect 47 0 50 0;
+#X connect 48 0 50 0;
+#X connect 49 0 48 0;
+#X connect 51 0 47 0;
+#X connect 51 0 49 0;
+#X connect 53 0 52 0;
+#X connect 54 0 52 0;
+#X connect 55 0 52 0;
+#X connect 56 0 58 0;
+#X connect 57 0 46 0;
+#X connect 58 0 46 0;
+#X connect 59 0 63 0;
+#X connect 60 0 63 0;
+#X connect 61 0 63 0;
 #X connect 62 0 60 0;
+#X connect 62 0 61 0;
 #X connect 62 0 59 0;
-#X connect 63 0 67 0;
-#X connect 64 0 67 0;
 #X connect 65 0 67 0;
-#X connect 66 0 64 0;
-#X connect 66 0 65 0;
-#X connect 66 0 63 0;
+#X connect 66 0 70 0;
+#X connect 67 0 68 0;
+#X connect 68 0 66 0;
+#X connect 69 0 74 0;
+#X connect 71 0 54 0;
+#X connect 72 0 53 0;
+#X connect 73 0 50 0;
+#X connect 74 0 75 0;
+#X connect 75 0 76 0;
+#X connect 76 0 57 0;
+#X connect 76 0 56 0;
+#X connect 76 1 77 0;
+#X connect 77 0 46 0;
+#X connect 78 0 79 0;
+#X connect 79 0 80 0;
+#X connect 80 0 81 0;
 #X restore 246 -155 pd REAPER-sender;
