@@ -38,3 +38,7 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 ehthumbs.db
+*.7z
+Workflow/Three-Machines/Mastering/**
+**~
+**.swp

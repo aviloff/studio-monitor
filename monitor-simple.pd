@@ -1,5 +1,5 @@
-#N canvas 684 283 505 87 10;
-#N canvas 143 378 1084 427 midicontrollers 1;
+#N canvas 220 178 387 74 10;
+#N canvas 129 357 1084 427 midicontrollers 0;
 #X obj 44 176 s midicntrls;
 #X msg 31 147 0;
 #X obj 1 118 loadbang;
@@ -47,7 +47,7 @@
 #X text 619 243 29 F3;
 #X text 571 243 28 E3;
 #X text 670 148 30 F#;
-#X obj 520 164 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 1
+#X obj 520 164 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 0
 1;
 #X obj 540 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -55,7 +55,7 @@
 1;
 #X obj 491 262 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 422 164 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 1
+#X obj 422 164 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 0
 1;
 #X obj 442 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -65,7 +65,7 @@
 #X text 470 243 26 D3;
 #X text 418 146 25 C#3;
 #X text 370 244 24 C3;
-#X obj 373 263 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 373 263 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 103 403 /_pitchbend;
 #X floatatom 114 376 5 0 0 0 - - -;
@@ -90,70 +90,70 @@
 #X obj 101 242 / 127;
 #X obj 189 316 s midiPhones1Volume;
 #X obj 44 299 s midiSpeakers3Volume;
-#X obj 1676 188 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+#X obj 1676 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
-#X obj 1696 188 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1696 182 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 1628 181 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
-#X obj 1648 181 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1628 202 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 1578 84 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 0
 1;
 #X obj 1597 84 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1530 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+#X obj 1529 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
-#X obj 1550 182 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1549 182 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 1480 84 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 0
 1;
 #X obj 1500 84 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1432 181 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+#X obj 1431 181 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
-#X obj 1452 181 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1451 181 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 1381 83 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 0
 1;
 #X obj 1401 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1333 181 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+#X obj 1332 181 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
-#X obj 1353 181 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1352 181 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1284 180 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+#X obj 1283 180 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
-#X obj 1304 180 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1303 180 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 1627 208 35 B3;
+#X text 1626 223 35 B3;
 #X text 1576 110 34 Bb3;
-#X text 1529 209 33 A3;
+#X text 1529 205 33 A3;
 #X text 1479 112 32 Ab3;
-#X text 1431 209 31 G3;
-#X text 1332 207 29 F3;
-#X text 1282 206 28 E3;
+#X text 1430 204 31 G3;
+#X text 1331 207 29 F3;
+#X text 1281 206 28 E3;
 #X text 1380 109 30 F#;
-#X obj 1234 83 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 1
+#X obj 1234 83 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 0
 1;
 #X obj 1254 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1186 181 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+#X obj 1185 180 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
-#X obj 1206 181 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1205 180 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 1136 83 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 0
 1;
 #X obj 1156 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1108 182 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1107 182 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 1234 107 27 Eb3;
-#X text 1186 204 26 D3;
+#X text 1185 203 26 D3;
 #X text 1136 106 25 C#3;
 #X text 1088 205 24 C3;
-#X text 1675 215 36 C4;
-#X obj 1088 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+#X text 1675 209 36 C4;
+#X obj 1087 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj 1087 30 select 24 25 26 27 28 29 30 31 32 33 34 35 36, f 107
 ;
@@ -175,6 +175,7 @@
 #X obj 1136 138 s referenceTrack;
 #X obj 1254 137 s resetMeters;
 #X obj 1401 133 s normaliseLoudness;
+#X obj 1480 156 s toggleBypassEffects;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
 #X connect 3 0 106 0;
@@ -210,6 +211,8 @@
 #X connect 62 0 65 0;
 #X connect 63 0 61 0;
 #X connect 67 0 66 0;
+#X connect 68 0 69 0;
+#X connect 74 0 124 0;
 #X connect 79 0 123 0;
 #X connect 93 0 122 0;
 #X connect 96 0 121 0;
@@ -273,7 +276,7 @@
 #X connect 118 0 115 0;
 #X connect 119 0 115 0;
 #X connect 120 0 115 0;
-#X restore 120 -137 pd midicontrollers;
+#X restore 106 -90 pd midicontrollers;
 #N canvas 476 557 664 447 osc-kontrolleur 0;
 #X obj 87 92 pipelist;
 #X obj 87 66 unpackOSC;
@@ -306,8 +309,8 @@
 #X connect 11 0 8 0;
 #X connect 12 0 13 0;
 #X connect 13 0 10 0;
-#X restore 120 -175 pd osc-kontrolleur;
-#N canvas -1261 144 1285 471 osc-control 1;
+#X restore 106 -128 pd osc-kontrolleur;
+#N canvas -1279 151 1267 471 osc-control 0;
 #X obj 79 73 pipelist;
 #X obj 79 45 unpackOSC;
 #X obj 21 153 print;
@@ -366,7 +369,12 @@
 #X obj 577 701 tgl 15 0 empty empty empty 17 7 0 10 -162280 -1 -1 0
 1;
 #X obj 655 761 s referenceTrack;
+#X obj 867 729 s panAutomator1;
+#X obj 79 93;
+#X obj 1113 726 s volumeAutomator1;
+#X obj 867 704 routeOSC /slider2Dx /slider2Dy /slider1, f 62;
 #X connect 0 0 11 0;
+#X connect 0 0 45 0;
 #X connect 1 0 0 0;
 #X connect 1 1 0 1;
 #X connect 5 0 1 0;
@@ -400,8 +408,11 @@
 #X connect 37 0 36 0;
 #X connect 38 0 42 0;
 #X connect 41 1 38 0;
+#X connect 41 4 47 0;
 #X connect 42 0 43 0;
-#X restore 120 -156 pd osc-control;
+#X connect 47 0 44 0;
+#X connect 47 2 46 0;
+#X restore 106 -109 pd osc-control;
 #N canvas 560 446 450 300 pd_interface 0;
 #X obj 84 73 vsl 20 200 0 1000 0 0 empty empty empty 0 -9 0 10 -261234
 -1 -1 0 1;
@@ -652,8 +663,8 @@
 #X connect 12 0 4 0;
 #X connect 13 0 11 0;
 #X connect 14 0 11 0;
-#X restore 15 -175 pd pd_interface;
-#N canvas -552 329 1040 544 totalmix-sender 1;
+#X restore 1 -128 pd pd_interface;
+#N canvas 171 199 1040 544 totalmix-sender 0;
 #N canvas 445 443 747 380 totalMixUdpSender 0;
 #X obj 346 239 udpsend;
 #X obj 166 74 loadbang;
@@ -735,6 +746,11 @@
 #X obj 155 62 select 0 1 2 3;
 #X msg 249 89 0.632;
 #X msg 176 89 0.51;
+#X obj 892 368 r toggleBypassEffects;
+#X obj 892 456 s toRME;
+#X msg 892 406 sendtyped /3/snapshots/8/1 f 1;
+#X msg 931 427 sendtyped /3/snapshots/7/1 f 1;
+#X obj 892 386 route 0;
 #X connect 2 0 1 0;
 #X connect 2 0 4 0;
 #X connect 3 0 35 0;
@@ -783,9 +799,14 @@
 #X connect 39 3 40 0;
 #X connect 40 0 31 0;
 #X connect 41 0 31 0;
-#X restore 246 -174 pd totalmix-sender;
-#N canvas -1284 -4 1280 980 REAPER-sender 1;
-#X obj 305 244 s toREAPER;
+#X connect 42 0 46 0;
+#X connect 44 0 43 0;
+#X connect 45 0 43 0;
+#X connect 46 0 44 0;
+#X connect 46 1 45 0;
+#X restore 232 -127 pd totalmix-sender;
+#N canvas 128 362 995 521 REAPER-sender 0;
+#X obj 336 186 s toREAPER;
 #N canvas 445 443 747 380 REAPERUdpSender 0;
 #X obj 346 239 udpsend;
 #X obj 166 74 loadbang;
@@ -891,20 +912,18 @@
 #X obj 1316 337 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 1476 453 sendtyped s/frames/str s 0;
-#X obj 957 348 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 953 309 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X floatatom 958 492 5 0 0 0 - - -;
-#X obj 1002 558 r resetMeters;
+#X floatatom 957 491 5 0 0 0 - - -;
+#X obj 1003 519 r resetMeters;
 #X obj 615 703 s toREAPERext;
 #X msg 1276 596 sendtyped /adjustLoudness f 0.1;
 #X msg 1334 638 sendtyped /adjustLoudness f 0.51;
 #X obj 1334 617 delay 50;
 #X obj 1276 687 s toREAPERext;
 #X obj 1277 546 r adjustLoudness;
-#X obj 1004 702 s toREAPERext;
-#X msg 1048 676 sendtyped /resetMeters f 0.51;
-#X msg 1034 637 sendtyped /resetMeters f 0.1;
-#X msg 1004 592 sendtyped /adjustLoudness f 0.5;
+#X obj 1004 699 s toREAPERext;
+#X msg 1048 635 sendtyped /resetMeters f 0.1;
 #X obj 658 636 delay 50;
 #X msg 616 616 sendtyped /resetAdjust f 0.1;
 #X msg 658 654 sendtyped /resetAdjust f 0.51;
@@ -915,16 +934,14 @@
 -1 -1;
 #X obj 1108 462 s toREAPER;
 #X obj 1099 312 r resetMeters;
-#X obj 809 745 r pauseLufsMeters;
-#X msg 809 791 sendtyped /pauseLufsMeters f \$1;
+#X obj 809 735 r pauseLufsMeters;
+#X msg 806 845 sendtyped /pauseLufsMeters f \$1, f 39;
 #X obj 809 766 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 833 766 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 845 765 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 617 560 r normaliseLoudness;
-#X obj 809 812 s toREAPERext;
-#X obj 1034 614 delay 80;
-#X obj 1048 657 delay 160;
+#X obj 806 919 s toREAPERext;
 #X msg 1363 662 sendtyped /adjustLoudness f 0.5;
 #X obj 615 585 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -937,6 +954,38 @@
 1;
 #X msg 1373 83 sendtyped /toggleBinaral f \$1;
 #X obj 1373 105 s toREAPER;
+#X obj 1151 760 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1175 760 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 1151 738 r resetMeters;
+#X obj 1153 851 s toREAPERext;
+#X obj 1177 808 delay 160;
+#X floatatom 906 535 5 0 0 0 - - -;
+#X obj 906 515 * 2000;
+#X obj 906 495 - 0.5;
+#X msg 1179 829 sendtyped /resetVisMeter f 0.51;
+#X msg 1153 785 sendtyped /resetVisMeter f 1;
+#X msg 894 891 sendtyped /pauseLufsMeters f 0.1;
+#X obj 889 869 delay 2000;
+#X obj 916 764 delay 2000;
+#X obj 807 796 / 2;
+#X obj 807 814 + 0.1;
+#X msg 883 789 \$1;
+#X obj 1003 543 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 1158 548 1;
+#X msg 1191 536 2;
+#X msg 1227 564 3;
+#X obj 1205 587 print \$1;
+#X msg 1035 679 sendtyped /resetMeters f 1;
+#X obj 1034 615 delay 100;
+#X obj 1368 687 s toREAPER;
+#X obj 708 703 s toREAPER;
+#X obj 905 918 s toREAPER;
+#X obj 1118 700 s toREAPER;
+#X msg 1004 592 sendtyped /adjustLoudness f 0.5;
+#X obj 1024 659 delay 180;
 #X connect 4 0 15 0;
 #X connect 5 0 2 0;
 #X connect 5 0 13 0;
@@ -980,41 +1029,139 @@
 #X connect 41 0 40 0;
 #X connect 41 0 37 0;
 #X connect 43 0 44 0;
-#X connect 45 0 55 0;
-#X connect 45 0 71 0;
-#X connect 45 0 72 0;
+#X connect 43 0 85 0;
+#X connect 45 0 94 0;
 #X connect 47 0 50 0;
+#X connect 47 0 101 0;
 #X connect 48 0 50 0;
+#X connect 48 0 101 0;
 #X connect 49 0 48 0;
 #X connect 51 0 47 0;
 #X connect 51 0 49 0;
 #X connect 53 0 52 0;
-#X connect 54 0 52 0;
-#X connect 55 0 52 0;
-#X connect 56 0 58 0;
-#X connect 57 0 46 0;
-#X connect 58 0 46 0;
-#X connect 59 0 63 0;
-#X connect 60 0 63 0;
-#X connect 61 0 63 0;
-#X connect 62 0 60 0;
-#X connect 62 0 61 0;
-#X connect 62 0 59 0;
-#X connect 65 0 67 0;
-#X connect 66 0 70 0;
-#X connect 67 0 68 0;
-#X connect 68 0 66 0;
-#X connect 69 0 74 0;
-#X connect 71 0 54 0;
-#X connect 72 0 53 0;
-#X connect 73 0 50 0;
+#X connect 53 0 104 0;
+#X connect 54 0 56 0;
+#X connect 55 0 46 0;
+#X connect 55 0 102 0;
+#X connect 56 0 46 0;
+#X connect 56 0 102 0;
+#X connect 57 0 61 0;
+#X connect 58 0 61 0;
+#X connect 59 0 61 0;
+#X connect 60 0 58 0;
+#X connect 60 0 59 0;
+#X connect 60 0 57 0;
+#X connect 63 0 65 0;
+#X connect 63 0 90 0;
+#X connect 64 0 68 0;
+#X connect 64 0 103 0;
+#X connect 65 0 66 0;
+#X connect 66 0 93 0;
+#X connect 67 0 70 0;
+#X connect 69 0 50 0;
+#X connect 69 0 101 0;
+#X connect 70 0 71 0;
+#X connect 71 0 72 0;
+#X connect 72 0 55 0;
+#X connect 72 0 54 0;
+#X connect 72 1 73 0;
+#X connect 73 0 46 0;
+#X connect 73 0 102 0;
 #X connect 74 0 75 0;
 #X connect 75 0 76 0;
-#X connect 76 0 57 0;
-#X connect 76 0 56 0;
-#X connect 76 1 77 0;
-#X connect 77 0 46 0;
+#X connect 76 0 77 0;
 #X connect 78 0 79 0;
-#X connect 79 0 80 0;
-#X connect 80 0 81 0;
-#X restore 246 -155 pd REAPER-sender;
+#X connect 78 0 87 0;
+#X connect 78 0 82 0;
+#X connect 82 0 86 0;
+#X connect 84 0 83 0;
+#X connect 85 0 84 0;
+#X connect 86 0 81 0;
+#X connect 87 0 81 0;
+#X connect 88 0 68 0;
+#X connect 88 0 103 0;
+#X connect 89 0 88 0;
+#X connect 91 0 92 0;
+#X connect 92 0 64 0;
+#X connect 93 0 91 0;
+#X connect 94 0 105 0;
+#X connect 94 0 100 0;
+#X connect 94 0 106 0;
+#X connect 95 0 98 0;
+#X connect 96 0 98 0;
+#X connect 97 0 98 0;
+#X connect 99 0 52 0;
+#X connect 99 0 104 0;
+#X connect 100 0 53 0;
+#X connect 105 0 52 0;
+#X connect 105 0 104 0;
+#X connect 106 0 99 0;
+#X restore 232 -108 pd REAPER-sender;
+#N canvas 375 162 872 645 studioOneController 0;
+#X obj 96 262 noteout;
+#X obj 338 113 loadbang;
+#X obj 96 184 metro;
+#X obj 96 236 makenote;
+#X floatatom 189 166 0 0 0 0 - - -;
+#X obj 96 210 f;
+#X floatatom 145 166 0 0 0 0 - - -;
+#X floatatom 233 166 0 0 0 0 - - -;
+#X floatatom 276 166 0 0 0 0 - - -;
+#X msg 338 148 500;
+#X msg 370 148 60;
+#X msg 399 148 64;
+#X msg 427 148 250;
+#X text 144 145 rate;
+#X text 187 145 pitch;
+#X text 232 145 vel;
+#X text 268 146 length;
+#X floatatom 229 245 0 0 0 0 - - -;
+#X obj 373 208 r volumeAutomator1;
+#X floatatom 373 246 5 0 0 0 - - -;
+#X obj 373 322 i;
+#X floatatom 373 342 5 0 0 0 - - -;
+#X floatatom 442 344 5 0 0 0 - - -;
+#X obj 442 324 bendin 1;
+#X obj 269 582 bendout;
+#X obj 407 399 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 387 293 * 8192;
+#X obj 373 265 expr (($f1 - 0.5) * 16984);
+#X obj 229 302 ctlout 7;
+#N canvas 0 50 450 300 floatToMidi 0;
+#X obj 137 79 inlet;
+#X obj 137 99 * 127;
+#X obj 137 119 i;
+#X obj 137 139 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X restore 229 271 pd floatToMidi;
+#X text 331 11 https://www.midi.org/specifications-old/item/table-3-control-change-messages-data-bytes-2
+;
+#X connect 1 0 9 0;
+#X connect 1 0 10 0;
+#X connect 1 0 11 0;
+#X connect 1 0 12 0;
+#X connect 2 0 5 0;
+#X connect 3 0 0 0;
+#X connect 3 1 0 1;
+#X connect 4 0 5 1;
+#X connect 5 0 3 0;
+#X connect 6 0 2 1;
+#X connect 7 0 3 1;
+#X connect 8 0 3 2;
+#X connect 9 0 6 0;
+#X connect 10 0 4 0;
+#X connect 11 0 7 0;
+#X connect 12 0 8 0;
+#X connect 17 0 29 0;
+#X connect 18 0 17 0;
+#X connect 19 0 27 0;
+#X connect 20 0 21 0;
+#X connect 21 0 24 0;
+#X connect 23 0 22 0;
+#X connect 25 0 24 0;
+#X connect 27 0 20 0;
+#X connect 29 0 28 0;
+#X restore 231 -89 pd studioOneController;
