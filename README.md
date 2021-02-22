@@ -3,6 +3,12 @@
 ---
 
 ---
+Patches to generate plugins using [Camomile](https://github.com/pierreguillot/Camomile) are in the **plugins** folder
+
+debuging Osc sending plugins in the **test** folder
+
+
+---
 
 simple-monitor.pd Pure Data patch for checking mid/side/stereo/left/right in realtime. Can be used with Soundflower/Jack or similar program/setup
 
