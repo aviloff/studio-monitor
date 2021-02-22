@@ -1,5 +1,5 @@
 # studio-monitor
- Realtime studio sound tweaking environment
+ Realtime studio sound controller plugin
 ---
 
 ---
