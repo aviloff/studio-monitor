@@ -1,6 +1,12 @@
 # studio-monitor
- Realtime studio sound tweaking environment
+ Realtime studio sound controller plugin
 ---
+
+---
+Patches to generate plugins using [Camomile](https://github.com/pierreguillot/Camomile) are in the **plugins** folder
+
+debuging Osc sending plugins in the **test** folder
+
 
 ---
 
