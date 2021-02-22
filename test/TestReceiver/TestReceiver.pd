@@ -1,18 +1,20 @@
-#N canvas 287 84 1517 1075 10;
+#N canvas 340 183 1517 1075 10;
 #X obj 384 21 adc~ 1 2;
 #X obj 377 59 dac~ 1 2;
 #X obj 18 34 oscparse;
 #X obj 18 56 list trim;
 #X obj 131 34 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 18 12 netreceive -u -b 15000;
 #X obj 18 77 route hello, f 12;
 #X obj 18 111 print received;
+#X obj 123 111 print other;
+#X obj 18 12 netreceive -u -b 15100;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
 #X connect 2 0 3 0;
-#X connect 3 0 6 0;
-#X connect 5 0 2 0;
-#X connect 5 0 4 0;
-#X connect 6 0 7 0;
+#X connect 3 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 8 0 2 0;
+#X connect 8 0 4 0;
 #X coords 0 -1 1 1 350 150 1 0 0;

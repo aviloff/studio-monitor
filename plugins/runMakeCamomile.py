@@ -16,14 +16,15 @@ for PluginName in os.listdir(DIR):
     SourceCamomile=DIR+'/'+PluginName
     if os.path.isdir(SourceCamomile):
 
-        distutils.dir_util.copy_tree(SourceCamomile, CamomileDir+'/'+PluginName) 
+        # distutils.dir_util.copy_tree(SourceCamomle, CamomileDir+'/'+PluginName) 
+        # print('cd '+CamomileRoot+' && ./camomile -f '+SourceCamomile+' -o '+Vst3PluginFolder+'/CamomileUtils'+' -v')
+        os.system('cd '+CamomileRoot+' && ./camomile -f '+SourceCamomile+' -o '+Vst3PluginFolder+'/CamomileUtils'+' -v') 
+        # os.system('cd '+CamomileRoot+' && ./camomile') 
 
-        os.system('cd '+CamomileRoot+' && ./camomile') 
-
-        shutil.rmtree(CamomileDir+'/'+PluginName)
+        # shutil.rmtree(CamomileDir+'/'+PluginName)
         
-        print(CamomileRoot+'/builds/'+PluginName+'.vst3')
+        # print(CamomileRoot+'/builds/'+PluginName+'.vst3')
 
-        distutils.dir_util.copy_tree(CamomileRoot+'/builds/'+PluginName+'.vst3', Vst3PluginFolder+'/CamomileUtils/'+PluginName+'.vst3') 
-        shutil.rmtree(CamomileRoot+'/builds')
+        # distutils.dir_util.copy_tree(CamomileRoot+'/builds/'+PluginName+'.vst3', Vst3PluginFolder+'/CamomileUtils/'+PluginName+'.vst3') 
+        # shutil.rmtree(CamomileRoot+'/builds')
 
