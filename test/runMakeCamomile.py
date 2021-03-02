@@ -6,11 +6,10 @@ import distutils
 from distutils import dir_util
 
 DIR=os.path.dirname(os.path.realpath(__file__))
-# CamomileRoot='/Users/Shared/CamomileBin'
-CamomileRoot='/Applications/Camomile108-2'
+CamomileRoot='/Users/Shared/CamomileBin'
 Vst3PluginFolder='/Library/Audio/Plug-Ins/VST3'
 
 for PluginName in os.listdir(DIR):
     SourceCamomile=DIR+'/'+PluginName
     if os.path.isdir(SourceCamomile):
-        os.system('cd '+CamomileRoot+' && ./camomile -f '+SourceCamomile+' -o '+Vst3PluginFolder+'/CamomileUtils'+' -vst3') 
+        os.system('cd '+CamomileRoot+' && ./camomile -f '+SourceCamomile+' -o '+Vst3PluginFolder+'/CamomileUtils'+' -lv2') 
