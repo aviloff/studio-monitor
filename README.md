@@ -28,6 +28,6 @@ Commits welcome:
 
 ---
 
-Thanks to [Pierre Guillot's Camomile](https://github.com/pierreguillot/Camomile), [Adam Katz's OSC Controller](https://play.google.com/store/apps/details?id=com.ffsmultimedia.osccontroller&hl=en_GB), [vvvv's Kontrolleur](https://github.com/vvvv/Kontrolleur)! Looking forward to more releases!
+Thanks to [Pierre Guillot's Camomile](https://github.com/pierreguillot/Camomile), [Adam Katz's OSC Controller](https://play.google.com/store/apps/details?id=com.ffsmultimedia.osccontroller&hl=en_GB), [vvvv's Kontrolleur](https://github.com/vvvv/Kontrolleur)! 
 
 ---
